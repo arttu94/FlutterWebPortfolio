@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 List<StaggeredTile> _staggeredTiles = const [
-  const StaggeredTile.count(4, 2),
+  const StaggeredTile.count(3, 2),
+  const StaggeredTile.count(1, 2),
+  const StaggeredTile.count(1, 1),
   const StaggeredTile.count(1, 1),
   const StaggeredTile.count(2, 1),
   const StaggeredTile.count(1, 1),
-  const StaggeredTile.count(1, 1),
+  const StaggeredTile.count(2, 1),
 ];
 
 List<Widget> _tiles = [
@@ -17,10 +19,20 @@ List<Widget> _tiles = [
     urlString: 'https://www.microsoft.com/en-us/p/dimensio/9n961b2tj2j1',
   ),
   ProjectCard(
+    projectName: 'AMONG US CLONE (WIP)',
+    imageName: 'assets/images/amongus.gif',
+  ),
+  ProjectCard(
     projectName: 'PLANES: AIR CONTROL 3D',
     imageName: 'assets/images/planes_icon.png',
     urlString:
         'https://play.google.com/store/apps/details?id=com.PartyCrow.Planes',
+  ),
+  ProjectCard(
+    projectName: 'PLANETOBLASTER',
+    imageName: 'assets/images/planeto_icon.png',
+    urlString:
+        'https://play.google.com/store/apps/details?id=com.TroshkyGames.Planetoblaster',
   ),
   ProjectCard(
     projectName: 'BONGO OVERLAY',
@@ -32,10 +44,8 @@ List<Widget> _tiles = [
     imageName: 'assets/images/metro_icon.png',
   ),
   ProjectCard(
-    projectName: 'PLANETOBLASTER',
-    imageName: 'assets/images/planeto_icon.png',
-    urlString:
-        'https://play.google.com/store/apps/details?id=com.TroshkyGames.Planetoblaster',
+    projectName: 'PATH FINDING UE4',
+    imageName: 'assets/images/pathfind.gif',
   ),
 ];
 
@@ -50,6 +60,7 @@ class _ProjectGridViewState extends State<ProjectGridView> {
   @override
   Widget build(BuildContext context) {
     return StaggeredGridView.extent(
+      physics: NeverScrollableScrollPhysics(),
       maxCrossAxisExtent: 300,
       shrinkWrap: true,
       crossAxisSpacing: 10.0,
