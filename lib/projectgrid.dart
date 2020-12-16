@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 List<StaggeredTile> _staggeredTiles = const [
-  const StaggeredTile.count(3, 2),
-  const StaggeredTile.count(1, 2),
+  const StaggeredTile.count(4, 3),
+  const StaggeredTile.count(2, 3),
   const StaggeredTile.count(1, 1),
   const StaggeredTile.count(1, 1),
-  const StaggeredTile.count(2, 1),
+  const StaggeredTile.count(4, 2),
   const StaggeredTile.count(1, 1),
-  const StaggeredTile.count(2, 1),
+  const StaggeredTile.count(4, 2),
 ];
 
 List<Widget> _tiles = [
@@ -61,7 +61,7 @@ class _ProjectGridViewState extends State<ProjectGridView> {
   Widget build(BuildContext context) {
     return StaggeredGridView.extent(
       physics: NeverScrollableScrollPhysics(),
-      maxCrossAxisExtent: 300,
+      maxCrossAxisExtent: 200,
       shrinkWrap: true,
       crossAxisSpacing: 10.0,
       mainAxisSpacing: 10.0,

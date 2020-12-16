@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title, this.child}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -16,6 +16,7 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+  final Widget child;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -31,7 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
             width: 1200,
             child: Column(
               children: [
-                Header(),
+                Header(
+                  portfolioPageRouting: false,
+                ),
                 Divider(
                   color: Color.fromARGB(255, 30, 30, 30),
                   height: 80.0,

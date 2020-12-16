@@ -1,5 +1,8 @@
+import 'package:ArturoPortfolio/aboutpage.dart';
 import 'package:flutter/material.dart';
 import 'homepage.dart';
+
+final navKey = new GlobalKey<NavigatorState>();
 
 void main() {
   runApp(MyApp());
@@ -7,9 +10,27 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/portfolio',
+      /* routes: {
+        '/portfolio': (context) => MyHomePage(),
+        '/about': (context) => AboutPage(),
+      }, */
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/portfolio':
+            return MaterialPageRoute(builder: (_) => MyHomePage());
+            break;
+          case '/about':
+            return MaterialPageRoute(builder: (_) => AboutPage());
+            break;
+        }
+      },
+      builder: (_, child) => child,
+      navigatorKey: navKey,
       title: 'Arturo Glez Portfolio',
       theme: ThemeData(
         // This is the theme of your application.
@@ -32,7 +53,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      //home: MyHomePage(),
     );
   }
 }
