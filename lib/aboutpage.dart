@@ -30,7 +30,6 @@ networked games.
 I strive to make unique and fun experiences as
 there's nothing quite as exciting es experiencing a world as you make it.
 
-
 Outside of game dev I enjoy playing the guitar, listening to music, 
 drawing and of course playing games.
 """;
@@ -89,8 +88,8 @@ drawing and of course playing games.
                                   child: Text(
                                     'GAME DEVELOPER',
                                     style: TextStyle(
-                                      fontSize: 56,
-                                      fontWeight: FontWeight.normal,
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),

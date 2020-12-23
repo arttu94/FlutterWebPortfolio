@@ -75,6 +75,12 @@ class Header extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(left: 40, right: 40),
                   child: GestureDetector(
+                    onTap: () {
+                      if (contactPageRouting) {
+                        navKey.currentState.pushNamed('/contact');
+                      }
+                      //Navigator.pushNamed(context, '/about');
+                    },
                     child: Text(
                       "CONTACT",
                       style: TextStyle(

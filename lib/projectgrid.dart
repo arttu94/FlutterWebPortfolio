@@ -42,10 +42,12 @@ List<Widget> _tiles = [
   ProjectCard(
     projectName: 'METRO COMMUTE',
     imageName: 'assets/images/metro_icon.png',
+    urlString: 'https://play.google.com/store/apps/details?id=com.TG.MM',
   ),
   ProjectCard(
     projectName: 'PATH FINDING UE4',
     imageName: 'assets/images/pathfind.gif',
+    urlString: 'https://github.com/arttu94/UE-PathFind',
   ),
 ];
 

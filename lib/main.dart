@@ -1,4 +1,5 @@
 import 'package:ArturoPortfolio/aboutpage.dart';
+import 'package:ArturoPortfolio/contactpage.dart';
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
             break;
           case '/about':
             return MaterialPageRoute(builder: (_) => AboutPage());
+            break;
+          case '/contact':
+            return MaterialPageRoute(builder: (_) => ContactPage());
             break;
         }
       },
