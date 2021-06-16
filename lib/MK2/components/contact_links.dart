@@ -7,7 +7,7 @@ class ContactLinks extends StatefulWidget {
   final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: 'arttu.gz94@gmail.com',
-      queryParameters: {'subject': 'Portfolio Contact'});
+      queryParameters: {'subject': 'Hello!'});
   final double fontSize = 22;
 
   @override
