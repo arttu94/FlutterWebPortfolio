@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactLinks extends StatefulWidget {
@@ -8,7 +9,6 @@ class ContactLinks extends StatefulWidget {
       scheme: 'mailto',
       path: 'arttu.gz94@gmail.com',
       queryParameters: {'subject': 'Hello!'});
-  final double fontSize = 22;
 
   @override
   _ContactLinksState createState() => _ContactLinksState();
@@ -17,93 +17,58 @@ class ContactLinks extends StatefulWidget {
 class _ContactLinksState extends State<ContactLinks> {
   @override
   Widget build(BuildContext context) {
+    double iconSize = MediaQuery.of(context).size.width <= 600 ? 30 : 36;
     return Padding(
-      padding: EdgeInsets.only(top: 50, bottom: 10),
+      padding: EdgeInsets.only(top: 35, bottom: 15),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              child: GestureDetector(
-                onTap: () {
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: IconButton(
+                iconSize: iconSize,
+                icon: FaIcon(FontAwesomeIcons.instagram),
+                onPressed: () {
                   launch('https://www.instagram.com/goza_mantecosa/');
                 },
-                child: Text(
-                  'Instagram',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w600,
-                    fontSize: widget.fontSize,
-                    color: Colors.red.shade600,
-                  ),
-                ),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              child: GestureDetector(
-                onTap: () {
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: IconButton(
+                iconSize: iconSize,
+                icon: FaIcon(FontAwesomeIcons.github),
+                onPressed: () {
                   launch('https://github.com/arttu94');
                 },
-                child: Text(
-                  'Github',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w600,
-                    fontSize: widget.fontSize,
-                    color: Colors.red.shade600,
-                  ),
-                ),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              child: GestureDetector(
-                onTap: () {
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: IconButton(
+                iconSize: iconSize,
+                icon: FaIcon(FontAwesomeIcons.linkedin),
+                onPressed: () {
                   launch('https://www.linkedin.com/in/artuglz/');
                 },
-                child: Text(
-                  'LinkedIn',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w600,
-                    fontSize: widget.fontSize,
-                    color: Colors.red.shade600,
-                  ),
-                ),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              child: GestureDetector(
-                onTap: () {
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.only(left: 5, right: 5),
+              child: IconButton(
+                iconSize: iconSize,
+                icon: FaIcon(FontAwesomeIcons.at),
+                onPressed: () {
                   launch(widget.emailLaunchUri.toString());
                 },
-                child: Text(
-                  'Email',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w600,
-                    fontSize: widget.fontSize,
-                    color: Colors.red.shade600,
-                  ),
-                ),
               ),
             ),
           ),

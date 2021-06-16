@@ -20,34 +20,59 @@ class Section extends StatefulWidget {
 class _SectionState extends State<Section> {
   @override
   Widget build(BuildContext context) {
+    bool slimFit = MediaQuery.of(context).size.width <= 600;
     return Padding(
       padding: widget.padding,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width > 800 ? 200 : 100,
-              child: SelectableText(
-                widget.sectionName,
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                  color: Colors.red.shade600,
+            if (slimFit)
+              Padding(
+                padding: EdgeInsets.only(bottom: 10, left: 10),
+                child: Container(
+                  width: 200,
+                  child: SelectableText(
+                    widget.sectionName,
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Colors.red.shade600,
+                    ),
+                  ),
                 ),
               ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (!slimFit)
+                  Container(
+                    width: MediaQuery.of(context).size.width > 800 ? 200 : 100,
+                    child: SelectableText(
+                      widget.sectionName,
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.red.shade600,
+                      ),
+                    ),
+                  ),
+                Container(
+                  width: 10,
+                ),
+                if (widget.child != null)
+                  Flexible(
+                    child: widget.child,
+                  ),
+              ],
             ),
-            Container(
-              width: 10,
-            ),
-            if (widget.child != null)
-              Flexible(
-                child: widget.child,
-              ),
           ],
         ),
       ),

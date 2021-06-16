@@ -27,6 +27,7 @@ class _ProjectTileState extends State<ProjectTile> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Row(
@@ -110,6 +111,7 @@ class _ProjectTileState extends State<ProjectTile> {
             width: 20,
           ),
           Flexible(
+            flex: screenWidth <= 600 ? 2 : 1,
             //width: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,

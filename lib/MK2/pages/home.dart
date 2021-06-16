@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-
+    double horizontalPadding = ((screenWidth * .2) / 1920);
     return Material(
       child: Stack(
         alignment: AlignmentDirectional.center,
@@ -32,7 +32,8 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               padding: EdgeInsets.symmetric(
                   vertical: 0,
-                  horizontal: screenWidth > 1000 ? screenWidth * .1 : 0.5),
+                  horizontal:
+                      screenWidth > 1000 ? screenWidth * horizontalPadding : 0),
               width: screenWidth,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

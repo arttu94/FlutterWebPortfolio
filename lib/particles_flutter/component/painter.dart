@@ -55,7 +55,7 @@ class ParticlePainter extends CustomPainter {
       (item) {
         randomColorPaint = Paint()
           ..color = particleColor
-          ..strokeWidth = 4 * (1 - item[2] / 50);
+          ..strokeWidth = 2 * (1 - item[2] / 50);
         canvas.drawLine(item[0], item[1], randomColorPaint);
       },
     );
