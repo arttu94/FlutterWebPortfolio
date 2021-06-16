@@ -1,5 +1,5 @@
-import 'package:ArturoPortfolio/header.dart';
-import 'package:ArturoPortfolio/projectgrid.dart';
+import 'package:arturo_portfolio/MK1/header.dart';
+import 'package:arturo_portfolio/MK1/projectgrid.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
