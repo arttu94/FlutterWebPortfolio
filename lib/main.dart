@@ -1,7 +1,5 @@
-import 'package:ArturoPortfolio/aboutpage.dart';
-import 'package:ArturoPortfolio/contactpage.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'MK2/pages/home.dart';
 
 final navKey = new GlobalKey<NavigatorState>();
 
@@ -15,49 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/portfolio',
-      /* routes: {
-        '/portfolio': (context) => MyHomePage(),
-        '/about': (context) => AboutPage(),
-      }, */
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case '/portfolio':
-            return MaterialPageRoute(builder: (_) => MyHomePage());
-            break;
-          case '/about':
-            return MaterialPageRoute(builder: (_) => AboutPage());
-            break;
-          case '/contact':
-            return MaterialPageRoute(builder: (_) => ContactPage());
-            break;
-        }
-      },
-      builder: (_, child) => child,
-      navigatorKey: navKey,
       title: 'Arturo Glez Portfolio',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        fontFamily: 'Roboto',
-        textTheme: TextTheme(
-          bodyText1: TextStyle(fontWeight: FontWeight.w400),
-          bodyText2: TextStyle(fontWeight: FontWeight.w400),
-        ).apply(bodyColor: Color.fromARGB(255, 50, 50, 50)),
-        primarySwatch: Colors.blueGrey,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: HomePage(),
       ),
-      //home: MyHomePage(),
     );
   }
 }
